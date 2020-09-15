@@ -96,11 +96,11 @@ function renderBarChart(data) {
       return height - y(d.Visitors);
     })
     .attr("width", x.bandwidth())
-    .on("mouseover", function(d) {
+    .on("mouseover", function(event,d) {
       //Get this bar's x/y values, then augment for the tooltip
       let xPosition =
         margin.left +
-        width / 2 +
+        // width / 2 +
         parseFloat(d3.select(this).attr("x")) +
         x.bandwidth() / 2;
       let yPosition =
